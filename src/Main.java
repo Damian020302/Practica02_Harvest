@@ -9,8 +9,9 @@ public class Main{
 	Scanner lnRd = new Scanner(System.in);
 	ZooManager zm = new ZooManager();
 	int choice = -1;
+	String key = "";
 	while(choice!=0){
-	    System.out.println("***** MENU *****");
+	    System.out.println("\n***** MENU *****");
 	    System.out.println("0 - Salir");
 	    System.out.println("1 - Agregar veterinario");
 	    System.out.println("2 - Agregar un animal");
@@ -30,21 +31,49 @@ public class Main{
 
 	    switch(choice){
 	    case 0:System.out.println("Adiós :c");break;
-	    case 1:
+	    case 1://añadiendo veterinario
 		zm.addVeter();break;
-	    case 2:;break;
-	    case 3:;break;
-	    case 4:
-		zm.getVeter();break;
-	    case 5:;break;
-	    case 6:;break;
-	    case 7:;break;
-	    case 8:;break;
-	    case 9:;break;
-	    case 10:;break;
-	    case 11:;break;
-	    case 12:;break;
-	    case 13:
+	    case 2://añadiendo un animal
+		zm.addAnimal();break;
+	    case 3://añadiendo un bioma
+		zm.addBioma();break;
+	    case 4://obteniendo datos de un veterinario
+		System.out.println("ingrese el RFC");
+		key = lnRd.nextLine();
+		zm.getVeter(key);break;
+	    case 5://obteniendo datos de un animal
+		System.out.println("ingrese el nombre del animal");
+		key = lnRd.nextLine();
+		zm.getAnimal(key);break;
+	    case 6://obteniendo datos de un animal
+		System.out.println("ingrese el ID del bioma");
+		key = lnRd.nextLine();
+		zm.getBioma(key);break;
+	    case 7://editando informacion de veterinario
+		System.out.println("ingrese el RFC");
+		key = lnRd.nextLine();
+		zm.editVeter(key);break;
+	    case 8://editando informacion de un animal
+		System.out.println("ingrese el nombre del animal");
+		key = lnRd.nextLine();
+		zm.editAnimal(key);break;
+	    case 9://editando informacion de un bioma
+		System.out.println("ingrese el ID del bioma");
+		key = lnRd.nextLine();
+		zm.editBioma(key);break;
+	    case 10://eliminando un veterinario
+		System.out.println("ingrese el RFC");
+		key = lnRd.nextLine();
+		zm.deleteVeter(key);break;
+	    case 11://eliminando un animal
+		System.out.println("ingrese el nombre del animal");
+		key = lnRd.nextLine();
+		zm.deleteAnimal(key);break;
+	    case 12://eliminando un bioma
+		System.out.println("ingrese el ID del bioma");
+		key = lnRd.nextLine();
+		zm.deleteBioma(key);break;
+	    case 13://reseteando archivos csv
 		zm.resetDataValue();break;
 	    default:
 		System.out.println("Opción invalida D: (presiona Enter)");
