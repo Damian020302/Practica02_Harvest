@@ -10,3 +10,6 @@
 **o simplemente:**
 
 - ant run
+
+## documentación
+Se agregó la documentación de las clases ZooManager.java y FileManager.java, La clase Main unicamente contiene el esqueleto del menú.
